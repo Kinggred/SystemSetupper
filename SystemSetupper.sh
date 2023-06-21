@@ -34,6 +34,8 @@ done
 echo "Great fun and all"
 echo "Time for some more apps"
 
+echo "What you are about to see is broken perfectly enougth so that i decided to now work on it anymore"
+
 progress_bar() {
 	local total=28
 	local width=56
@@ -47,10 +49,6 @@ progress_bar() {
 	printf "\rProgress: |%s%s|" "$(printf "%${filled}s" | tr ' ' '#')" "$(printf "%${empty}s" | tr ' ' '-')"$percent
 	
 	tput rc
-}
-
-handle_resize() {
-	progres_bar $1 $current_proggress
 }
 
 echo "Initializing fun times"
