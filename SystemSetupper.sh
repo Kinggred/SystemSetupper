@@ -44,7 +44,7 @@ progress_bar() {
 	tput sc
 	tput cup$(($(tput lines) - 1)) 0
 
-	printf "\rProgress: |%s%s| %3d%%" "$(printf "%${filled}s" | tr ' ' '#')" "$(printf "%${empty}s" | tr ' ' '-')"$percent
+	printf "\rProgress: |%s%s|" "$(printf "%${filled}s" | tr ' ' '#')" "$(printf "%${empty}s" | tr ' ' '-')"$percent
 	
 	tput rc
 }
@@ -69,12 +69,11 @@ cd Components
 trap handle_resize SIGWINCH
 
 current_progress=0
-progress=0
+progress=4
 for prog in $progs; do
-	$progress=$progress + 4
-	$current_progress + $progress
-	progres_bar $current_progress
+	progress_bar $current_progress
 	echo "Trying to run: ${prog}"
 	sudo ./$prog
+	$current_progress=$current_progress+$progress
 done
 
