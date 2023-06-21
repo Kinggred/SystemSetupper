@@ -74,6 +74,6 @@ for prog in $progs; do
 	progress_bar $current_progress
 	echo "Trying to run: ${prog}"
 	sudo ./$prog
-	$current_progress=$current_progress+$progress
+	$current_progress=$(($current_progress+$progress))
 done
 
