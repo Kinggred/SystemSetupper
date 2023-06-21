@@ -23,5 +23,5 @@ echo "Time for some magic looooops"
 
 for dep in $deps; do
 	echo "About to install ${dep}"
-	sudo apt install $dep
+	sudo apt install -y $dep
 done
