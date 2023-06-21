@@ -7,10 +7,11 @@ echo "You won't be askin for more anytime soon"
 echo "You didn't run this thing with sudo did ya?"
 echo "Well, lemme check:"
 
-sudo apt update
-sudo apt upgrade
+sudo apt update -y
+sudo apt upgrade -y
+sudo apt autoremove -y
 
-sudo apt install -y yq
+sudo snap install -y yq
 
 echo "You poor soul, you did!"
 echo "Well lets check the dependencies before doing anything funny."
