@@ -66,8 +66,6 @@ progs=$(sudo cat deps.yml | yq '.programs')
 
 cd Components
 
-trap handle_resize SIGWINCH
-
 current_progress=0
 progress=4
 for prog in $progs; do
@@ -76,4 +74,4 @@ for prog in $progs; do
 	sudo ./$prog
 	$current_progress=$(($current_progress+$progress))
 done
-
+progress_bar 28
