@@ -35,19 +35,45 @@ echo "Great fun and all"
 echo "Time for some more apps"
 
 progress_bar() {
-	local total=25
-	local width=50
-	local percent=$((100 * $1 / $total))
-	local filled=$((width * $1 / $total))
+	local total=28
+	local width=56
+	local percent=$((100 * $2 / $total))
+	local filled=$((width * $2 / $total))
 	local empty=$((width - filled))
+
+	tput sc
+	tput cup$(($(tput lines) - 1)) 0
+
 	printf "\rProgress: |%s%s| %3d%%" "$(printf "%${filled}s" | tr ' ' '#')" "$(printf "%${empty}s" | tr ' ' '-')"$percent
+	
+	tput rc
+}
+
+handle_resize() {
+	progres_bar $1 $current_proggress
 }
 
 echo "Initializing fun times"
 
-for i in $(seq 0 25); do
+for i in $(seq 0 28); do
 	progress_bar $i
 	sleep 1
 done
 
 echo "Done"
+
+progs=$(sudo cat deps.yml | yq '.programs')
+
+cd Components
+
+trap handle_resize SIGWINCH
+
+current_progress=0
+progress=0
+for prog in $progs; do
+	$progress=$progress + 4
+	$current_progress + $progress
+	progres_bar $current_progress
+	echo "Trying to run: ${prog}"
+	sudo ./$prog
+
