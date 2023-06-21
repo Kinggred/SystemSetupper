@@ -37,8 +37,8 @@ echo "Time for some more apps"
 progress_bar() {
 	local total=28
 	local width=56
-	local percent=$((100 * $2 / $total))
-	local filled=$((width * $2 / $total))
+	local percent=$((100 * $1 / $total))
+	local filled=$((width * $1 / $total))
 	local empty=$((width - filled))
 
 	tput sc
@@ -76,4 +76,5 @@ for prog in $progs; do
 	progres_bar $current_progress
 	echo "Trying to run: ${prog}"
 	sudo ./$prog
+done
 
