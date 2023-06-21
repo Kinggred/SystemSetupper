@@ -7,11 +7,15 @@ echo "You won't be askin for more anytime soon"
 echo "You didn't run this thing with sudo did ya?"
 echo "Well, lemme check:"
 
+echo "Update"
 sudo apt update -y
+echo "Upgrade"
 sudo apt upgrade -y
+echo "Autoremove"
 sudo apt autoremove -y
 
-sudo snap install -y yq
+echo "Installing yq"
+sudo snap install yq --classic
 
 echo "You poor soul, you did!"
 echo "Well lets check the dependencies before doing anything funny."
