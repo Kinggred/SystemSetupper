@@ -30,3 +30,24 @@ for dep in $deps; do
 	echo "About to install ${dep}"
 	sudo apt install -y $dep
 done
+
+echo "Great fun and all"
+echo "Time for some more apps"
+
+progress_bar() {
+	local total=25
+	local width=50
+	local percent=$((100 * \$1 / $total))
+	local filled=$((width * \$1 / $total))
+	local empty=$((width - filled))
+	printf "\rProgress: |%s%s| %3d%%" "$(printf "%${filled}s" | tr ' ' '#')" "$(printf "%${empty}s" | tr ' ' '-')"$percent
+}
+
+echo "Initializing fun times"
+
+for i in $(seq 0 25); do
+	progress_bar $i
+	sleep 1
+done
+
+echo "Done"
