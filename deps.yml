@@ -1,2 +1,4 @@
 dependencies:
   - curl
+programs:
+  - apache2.sh
