@@ -22,7 +22,7 @@ echo "Well lets check the dependencies before doing anything funny."
 
 yq -V
 
-deps=$(yq '.dependencies' deps.yml)
+deps=$(sudo yq '.dependencies' deps.yml)
 
 echo "Time for some magic looooops"
 
