@@ -34,11 +34,11 @@ done
 echo "Great fun and all"
 echo "Time for some more apps"
 
-progress_bar() {
+progress_bar(i) {
 	local total=25
 	local width=50
-	local percent=$((100 * \$1 / $total))
-	local filled=$((width * \$1 / $total))
+	local percent=$((100 * $i / $total))
+	local filled=$((width * $i / $total))
 	local empty=$((width - filled))
 	printf "\rProgress: |%s%s| %3d%%" "$(printf "%${filled}s" | tr ' ' '#')" "$(printf "%${empty}s" | tr ' ' '-')"$percent
 }
