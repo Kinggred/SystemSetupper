@@ -1,7 +1,7 @@
-dependencies:
+dependencies: 
   curl
   debconf-utils
-programs:
+programs: 
   apache2.sh
   php.sh
   mysql.sh
