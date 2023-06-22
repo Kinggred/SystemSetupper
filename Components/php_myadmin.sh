@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Loading environ variables"
-source .env
+source ../.env
 
 
 echo "phpmydamin phpmyadmin/dbconfig-install boolean true" | sudo debconf-set-selections

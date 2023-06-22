@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Loading environ variables"
-source .env
+source ../.env
 
 
 sudo mysql -u root <<MYSQL_SCRIPT

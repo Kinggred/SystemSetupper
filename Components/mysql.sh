@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Loading environ variables"
-source .env
+source 
 
 
 echo "mysql-server mysql-server/root_password password ${MYSQL_PASSWD}"
