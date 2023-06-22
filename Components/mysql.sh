@@ -9,6 +9,4 @@ sudo service mysql start
 
 sudo service mysql status
 
-sudo mysql -uroot -p -e "CREATE USER '${USERNAME}'@'localhost' IDENTIFIED BY '${MYSQL_PASSWD}';"
-sudo mysql -uroot -p -e "GRANT ALL PRIVILEGES ON *.* TO '${USERNAME}'@'localhost' WITH GRANT OPTION;"
-sudo mysql -uroot -p -e "FLUSH PRIVILEGES;"
+sudo mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '${MYSQL_PASWD}'"
