@@ -65,7 +65,7 @@ progs=$(sudo cat deps.yml | yq '.programs')
 cd Components
 
 echo "Loading environ variables"
-export $(grep -v '^#' .env | xargs)
+source .env
 
 current_progress=0
 progress=4
