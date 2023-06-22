@@ -1,4 +1,6 @@
 dependencies:
   curl
+  debconf-utils
 programs:
   apache2.sh
+  php.sh
