@@ -15,6 +15,7 @@ text="Include /etc/phpmyadmin/apache.conf"
 if ! grep -q ${text} /etc/apache2/apache2.conf; then
 	echo $text | sudo tee -a /etc/apache2/apache2.conf
 fi
+echo "Added some config"
 
 sudo systemctl restart apache2
 
