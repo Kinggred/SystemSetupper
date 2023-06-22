@@ -64,8 +64,6 @@ progs=$(sudo cat deps.yml | yq '.programs')
 
 cd Components
 
-echo "Loading environ variables"
-source .env
 
 current_progress=0
 progress=4

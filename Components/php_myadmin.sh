@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "Loading environ variables"
+source .env
+
+
 echo "phpmydamin phpmyadmin/dbconfig-install boolean true" | sudo debconf-set-selections
 echo "phpmyadmin phpmyadmin/app-password-confirm password ${PHP_PASSWD}" | sudo debconf-set-selections
 echo "phpmyadmin phpmyadmin/mysql/admin-pass password ${MYSQL_PASSWD}" | sudo debconf-set-selections
