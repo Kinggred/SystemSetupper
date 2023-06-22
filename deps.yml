@@ -4,3 +4,4 @@ dependencies:
 programs:
   apache2.sh
   php.sh
+  mysql.sh
