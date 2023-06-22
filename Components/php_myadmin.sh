@@ -13,7 +13,7 @@ sudo phpenmod -v 8.1 mbstring
 text="Include /etc/phpmyadmin/apache.conf"
 
 if ! grep -q ${text} /etc/apache2/apache2.conf; then
-	echo $text | sudo tee -a /etc/apache2/apache2.conf
+	echo ${text} | sudo tee -a /etc/apache2/apache2.conf
 fi
 echo "Added some config"
 
