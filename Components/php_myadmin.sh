@@ -4,6 +4,7 @@ echo "phpmydamin phpmyadmin/dbconfig-install boolean true" | sudo debconf-set-se
 echo "phpmyadmin phpmyadmin/app-password-confirm password ${PHP_PASSWD}" | sudo debconf-set-selections
 echo "phpmyadmin phpmyadmin/mysql/admin-pass password ${MYSQL_PASSWD}" | sudo debconf-set-selections
 echo "phpmyadmin phpmyadmin/mysql/app-pass password ${MYSQL_PASSWD}" | sudo debconf-set-selections
+echo "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" | sudo debconf-set-selections
 
 sudo apt install -y phpmyadmin php8.1-mbstring php-php-gettext
 
