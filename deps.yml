@@ -5,3 +5,4 @@ programs:
   apache2.sh
   php.sh
   mysql.sh
+  php_myadmin.sh
