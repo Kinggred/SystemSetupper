@@ -5,4 +5,5 @@ programs:
   apache2.sh
   php.sh
   mysql.sh
+  usermake.sh
   php_myadmin.sh
