@@ -64,7 +64,6 @@ progs=$(sudo cat deps.yml | yq '.programs')
 
 cd Components
 
-
 current_progress=0
 progress=4
 for prog in $progs; do
