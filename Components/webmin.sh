@@ -5,7 +5,7 @@ curl -s http://www.webmin.com/jcameron-key.asc | sudo gpg --dearmor --yes -o /us
 echo "deb [signed-by=/usr/share/keyrings/webmin.gpg] http://download.webmin.com/download/repository sarge contrib" | sudo tee /etc/apt/sources.list.d/webmin.list
 
 sudo apt-get update -y
+
 sudo apt-get install webmin -y
 
-# Restart the server
 sudo service apache2 restart
