@@ -9,3 +9,4 @@ programs:
   ftp.sh
   usermake.sh
   webmin.sh
+  cronfigure.sh
