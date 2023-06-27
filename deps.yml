@@ -8,3 +8,4 @@ programs:
   php_myadmin.sh
   ftp.sh
   usermake.sh
+  webmin.sh
